@@ -10,7 +10,7 @@ function App() {
     try {
       const response = await fetch('https://api.giphy.com/v1/gifs/random?api_key=ADJhmHFAajZpCZaIVh5myHPaj6LMAdkJ&tag=dogs&rating=g')
       const data = await response.json()
-      setImgURL(data.data.map((img) => images.original.url))
+      setImgURL(data.data.images.original.url)
     } catch(err) {
       console.error(err)
     }
@@ -50,13 +50,16 @@ function App() {
         <input value={userQ} onChange={handleSearchChange} type="search" name="search" id="search" />
         <button type='submit'>Search</button>
       </form>
-      {!searchResults ?
+      {!searchResults.length ?
         <div>
           No search results
         </div>
       : 
         <div>
-          {searchResults.map(img => img.images.original.url)}
+          {searchResults.map(img => {
+            return <img key={img.id} src={img.images.original.url} />
+            }
+          )}
         </div>
       }
 
