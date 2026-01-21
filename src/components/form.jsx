@@ -1,6 +1,9 @@
 import React from "react";
 
 const SearchForm = () => {
+    const getLocation = () => {
+        
+    }
 
     return (
         <div className="form-container">

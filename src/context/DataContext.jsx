@@ -9,6 +9,7 @@ export const DataProvider = ({ children }) => {
         startDate: null,
         endDate: null
     })
+    
 
     return (
         <DataContext.Provider value={{ searchData, setSearchData }}>

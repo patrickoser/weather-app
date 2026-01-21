@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from '../context/DataContext';
 
 const Cards = () => {
     const [weatherData, setWeatherData] = useState({
@@ -11,11 +12,12 @@ const Cards = () => {
         description: null
     })
 
-    const getData = async () => {
-        setSearchData(prev => ({ ...prev,
-            startDate: new Date(),
-            endDate: new Date(now.getTime() + (72 * 60 * 60 * 1000))
-        }))
+    const { searchData, setSearchData} = useContext(DataContext)
+
+    const getData = async () => { setSearchData(prev => ({ ...prev,
+        startDate: new Date(),
+        endDate: new Date(now.getTime() + (72 * 60 * 60 * 1000))
+    }))
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchLocation}/${startDate}/${endDate}`)
             const data = await res.json()
