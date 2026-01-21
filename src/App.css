@@ -5,11 +5,31 @@
   text-align: center;
 }
 
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  } 
+}
+
+.cards {
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+
 form {
   display: grid;
   grid-template-columns: 5fr 1fr
 }
 
-button {
+form > * {
   border: 1px solid black;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
