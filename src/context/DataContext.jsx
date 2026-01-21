@@ -7,7 +7,7 @@ export const DataProvider = ({ children }) => {
     const [searchData, setSearchData] = useState({
         location: null,
         startDate: null,
-        endDate: null,
+        endDate: null
     })
 
     return (
