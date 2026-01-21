@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
+}
+
 button {
-  border: 1 solid black;
+  border: 1px solid black;
 }

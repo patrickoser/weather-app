@@ -1,26 +1,26 @@
-import React from React;
+import React from 'react';
 
 const Cards = () => {
 
-    return(
+    return (
         <div>
             <article>
                 <h2>Today</h2>
-                <p classname="temp"></p>
-                <p classname="precip"></p>
-                <p classname="wind"></p>
+                <p className="temp"></p>
+                <p className="precip"></p>
+                <p className="wind"></p>
             </article>
             <article>
                 <h2>Tommorrow</h2>
-                <p classname="temp"></p>
-                <p classname="precip"></p>
-                <p classname="wind"></p>
+                <p className="temp"></p>
+                <p className="precip"></p>
+                <p className="wind"></p>
             </article>
             <article>
                 <h2>The Day After Tomorrow</h2>
-                <p classname="temp"></p>
-                <p classname="precip"></p>
-                <p classname="wind"></p>
+                <p className="temp"></p>
+                <p className="precip"></p>
+                <p className="wind"></p>
             </article>
         </div>
     )
