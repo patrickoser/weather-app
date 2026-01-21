@@ -2,17 +2,22 @@ import React from 'react';
 import { useState } from 'react';
 
 const Cards = () => {
-    const [searchLocation, setSearchLocation] = useState('')
+    const [searchData, setSearchData] = useState({
+        location: null,
+        startDate: null,
+        endDate: null,
+    })
     const [weatherData, setWeatherData] = useState({
         currentTemp: null,
         maxTemp: null,
         minTemp: null,
         precipitation: null,
-        windSpeed: null
+        windSpeed: null,
+        description: null
     })
 
     const getData = async () => {
-        const res = await fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/')
+        const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchLocation}`)
     }
 
     return (
