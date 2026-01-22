@@ -20,15 +20,15 @@ export const DataProvider = ({ children }) => {
     const getData = async (e) => { 
         setSearchData(prev => ({ ...prev,
             startDate: new Date(),
-            endDate: new Date(now.getTime() + (72 * 60 * 60 * 1000))
+            endDate: new Date(Date.now() + (72 * 60 * 60))
         }))
-        console.log(searchData)
+        console.log(`searchData: ${searchData}`)
         try {
-            const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}`)
+            const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
             const data = await res.json()
-            console.log(data)
+            console.log(`Data fetched: ${data}`)
         } catch (err) {
-            console.error(err)
+            console.error(err.message)
         }
     }
     

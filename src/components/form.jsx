@@ -10,7 +10,7 @@ const Form = () => {
         e.preventDefault()
         console.log(`searchData: ${searchData}, location: ${location}`)
         setSearchData(prev => ({ ...prev, location: location }))
-        console.log(`searchData: ${searchData}, location: ${location}`)
+        console.log(`searchData: ${searchData.location}, location: ${location}`)
     }
 
     return (
