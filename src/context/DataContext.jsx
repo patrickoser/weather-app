@@ -17,23 +17,24 @@ export const DataProvider = ({ children }) => {
         description: null
     })
 
-    const getData = async (e) => { 
-        setSearchData(prev => ({ ...prev,
-            startDate: new Date(),
-            endDate: new Date(Date.now() + (72 * 60 * 60))
-        }))
-        console.log(`searchData: ${searchData}`)
+    const getData = async () => { 
+        console.log(`searchData: ${searchData.location}, ${searchData.startDate}, ${searchData.endDate}`)
+        
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
             const data = await res.json()
-            console.log(`Data fetched: ${data}`)
+            console.log(`Data fetched: ${ data.days }`)
         } catch (err) {
             console.error(err.message)
         }
     }
     
     useEffect(() => {
-        getData()
+        if (searchData.location) {
+            console.log(searchData.location)
+            getData()
+        }
+
     }, [searchData.location])
 
     return (

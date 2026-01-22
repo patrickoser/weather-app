@@ -3,14 +3,19 @@ import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Form = () => {
-    const { searchData, setSearchData } = useContext(DataContext)
+    const { setSearchData } = useContext(DataContext)
     const [ location, setLocation ] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(`searchData: ${searchData}, location: ${location}`)
-        setSearchData(prev => ({ ...prev, location: location }))
-        console.log(`searchData: ${searchData.location}, location: ${location}`)
+        // console.log(`searchData: ${searchData.location}, location: ${location}`)
+        setSearchData(prev => ({ ...prev,
+            location: location,
+            startDate: new Date().toISOString(),
+            endDate: new Date(Date.now() + (72 * 60 * 60)).toISOString()
+        }))
+        // setSearchData(prev => ({ ...prev, location: location }))
+        // console.log(`searchData: ${searchData.location}, location: ${location}`)
     }
 
     return (
