@@ -12,6 +12,9 @@ function App() {
         Weather App
       </h1>
       <div>
+        <Form />
+      </div>
+      <div>
         <Cards  />
       </div>
     </div>

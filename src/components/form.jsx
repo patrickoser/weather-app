@@ -1,9 +1,6 @@
 import React from "react";
 
 const Form = () => {
-    const getLocation = () => {
-
-    }
 
     return (
         <div className="form-container">
