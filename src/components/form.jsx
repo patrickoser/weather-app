@@ -8,15 +8,20 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setSearchData(prev => ({ ...prev, location: e.target.value }))
+        console.log(`searchData: ${setSearchData}, location: ${location}`)
+        setSearchData(prev => ({ ...prev, location: location }))
+        console.log(`searchData: ${setSearchData}, location: ${location}`)
     }
 
     return (
         <div className="form-container">
-            <form action="">
+            <form onSubmit={handleSubmit} action="">
                 <input
-                onChange={(e) => setLocation(e.target.value)} value={location} type="search" />
-                <button onSubmit={handleSubmit} type="submit">Search</button>
+                    onChange={(e) => setLocation(e.target.value)} 
+                    value={location} 
+                    type="search" 
+                />
+                <button type="submit">Search</button>
             </form>
         </div>
     )
