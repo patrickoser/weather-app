@@ -1,8 +1,8 @@
 import React from "react";
 
-const SearchForm = () => {
+const Form = () => {
     const getLocation = () => {
-        
+
     }
 
     return (
@@ -15,4 +15,4 @@ const SearchForm = () => {
     )
 }
 
-export default SearchForm
+export default Form

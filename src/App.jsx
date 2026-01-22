@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Cards from './components/cards'
+import Form from './components/form.jsx'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -10,12 +11,8 @@ function App() {
       <h1>
         Weather App
       </h1>
-      <form action="">
-        <input type="search" />
-        <button type="submit">Search</button>
-      </form>
       <div>
-        <Cards />
+        <Cards  />
       </div>
     </div>
   )
