@@ -3,3 +3,6 @@ Cards:
 
 Context:
   - Context is not entirely necessary but I want to use it for practice/refresher, same goes for some light prop drilling. Could just grab location/searchData in App and prop drill the values to Form/Cards. Use the COntext file for all useEffects and other state that needs to be used in either component.
+
+Currently:
+  - searchData is generated appropriately and data is fetched I just have to access it now, currently not showing up as a workable object.
