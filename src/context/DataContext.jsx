@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-imp
 
 export const DataContext = createContext({})
 
@@ -38,7 +37,7 @@ export const DataProvider = ({ children }) => {
     }, [searchData.location])
 
     return (
-        <DataContext.Provider value={{ searchData, setSearchData, getData }}>
+        <DataContext.Provider value={{ searchData, setSearchData, getData, weatherData }}>
             {children}
         </DataContext.Provider>
     )

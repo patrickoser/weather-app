@@ -4,12 +4,11 @@ import { DataContext } from '../context/DataContext';
 
 const Cards = () => {
 
-
-    const { searchData, setSearchData} = useContext(DataContext)
+    const { searchData, setSearchData, weatherData } = useContext(DataContext)
 
 
     return (
-        weatherData.currentTemp ? (
+        weatherData?.currentTemp ? (
             <div className='cards-container'>
                 <article className='cards'>
                     <h2>Today</h2>
@@ -42,8 +41,7 @@ const Cards = () => {
                     </div>
                 </article>
             </div>
-        ) : 
-            <h2>Input a Location.</h2>
+        ) : <h2>Input a Location.</h2>
     )
 }
 
