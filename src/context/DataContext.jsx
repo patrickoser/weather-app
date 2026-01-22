@@ -10,8 +10,9 @@ export const DataProvider = ({ children }) => {
         endDate: null
     })
     
-    const getData = async () => { 
+    const getData = async (e) => { 
         setSearchData(prev => ({ ...prev,
+            location: e.target.value,
             startDate: new Date(),
             endDate: new Date(now.getTime() + (72 * 60 * 60 * 1000))
         }))
