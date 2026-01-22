@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
         }))
         console.log(searchData)
         try {
-            const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchLocation}/${startDate}/${endDate}`)
+            const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}`)
             const data = await res.json()
             console.log(data)
         } catch (err) {

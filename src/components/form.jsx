@@ -3,14 +3,14 @@ import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Form = () => {
-    const { setSearchData } = useContext(DataContext)
+    const { searchData, setSearchData } = useContext(DataContext)
     const [ location, setLocation ] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(`searchData: ${setSearchData}, location: ${location}`)
+        console.log(`searchData: ${searchData}, location: ${location}`)
         setSearchData(prev => ({ ...prev, location: location }))
-        console.log(`searchData: ${setSearchData}, location: ${location}`)
+        console.log(`searchData: ${searchData}, location: ${location}`)
     }
 
     return (
