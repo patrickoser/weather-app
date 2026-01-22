@@ -9,13 +9,21 @@ export const DataProvider = ({ children }) => {
         startDate: null,
         endDate: null
     })
-    
+    const [weatherData, setWeatherData] = useState({
+        currentTemp: null,
+        maxTemp: null,
+        minTemp: null,
+        precipitation: null,
+        windSpeed: null,
+        description: null
+    })
+
     const getData = async (e) => { 
         setSearchData(prev => ({ ...prev,
-            location: e.target.value,
             startDate: new Date(),
             endDate: new Date(now.getTime() + (72 * 60 * 60 * 1000))
         }))
+        console.log(searchData)
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchLocation}/${startDate}/${endDate}`)
             const data = await res.json()
@@ -25,6 +33,9 @@ export const DataProvider = ({ children }) => {
         }
     }
     
+    useEffect(() => {
+        getData()
+    }, [searchData.location])
 
     return (
         <DataContext.Provider value={{ searchData, setSearchData, getData }}>

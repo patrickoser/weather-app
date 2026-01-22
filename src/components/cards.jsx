@@ -3,14 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 
 const Cards = () => {
-    const [weatherData, setWeatherData] = useState({
-        currentTemp: null,
-        maxTemp: null,
-        minTemp: null,
-        precipitation: null,
-        windSpeed: null,
-        description: null
-    })
+
 
     const { searchData, setSearchData} = useContext(DataContext)
 
