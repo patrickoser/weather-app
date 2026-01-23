@@ -18,7 +18,6 @@ export const DataProvider = ({ children }) => {
     })
 
     const getData = async () => { 
-        console.log(`searchData: ${searchData.location}, ${searchData.startDate}, ${searchData.endDate}`)
         
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
@@ -41,7 +40,6 @@ export const DataProvider = ({ children }) => {
         if (searchData.location) {
             getData()
         }
-
     }, [searchData.location])
 
     return (
