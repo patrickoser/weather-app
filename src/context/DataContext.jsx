@@ -23,7 +23,7 @@ export const DataProvider = ({ children }) => {
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
             const data = await res.json()
-            console.log(`Data fetched: ${ data.days }`)
+            console.log('Data fetched: ', data.days)
         } catch (err) {
             console.error(err.message)
         }
@@ -31,7 +31,6 @@ export const DataProvider = ({ children }) => {
     
     useEffect(() => {
         if (searchData.location) {
-            console.log(searchData.location)
             getData()
         }
 
