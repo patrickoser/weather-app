@@ -17,7 +17,7 @@ const Cards = () => {
                         <p className="min-temp">{weatherData.minTemp}</p>
                         <p className="humidity">{weatherData.humidity}</p>
                         <p className="wind">{weatherData.windSpeed}</p>
-                        <p className='description'></p>
+                        <p className='description'>{weatherData.description}</p>
                     </div>
                 </article>
                 <article className='cards'>
