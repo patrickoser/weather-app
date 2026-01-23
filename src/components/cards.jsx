@@ -6,7 +6,6 @@ const Cards = () => {
 
     const { searchData, setSearchData, weatherData } = useContext(DataContext)
 
-
     return (
         weatherData?.currentTemp ? (
             <div className='cards-container'>
@@ -16,8 +15,9 @@ const Cards = () => {
                         <p className="current-temp">{weatherData.currentTeamp}</p>
                         <p className="max-temp">{weatherData.maxTemp}</p>
                         <p className="min-temp">{weatherData.minTemp}</p>
-                        <p className="precip">{weatherData.precipitation}</p>
+                        <p className="humidity">{weatherData.humidity}</p>
                         <p className="wind">{weatherData.windSpeed}</p>
+                        <p className='description'></p>
                     </div>
                 </article>
                 <article className='cards'>
@@ -26,8 +26,9 @@ const Cards = () => {
                         <p className="current-temp">{weatherData.currentTeamp}</p>
                         <p className="max-temp">{weatherData.maxTemp}</p>
                         <p className="min-temp">{weatherData.minTemp}</p>
-                        <p className="precip">{weatherData.precipitation}</p>
-                        <p className="wind">{weatherData.windSpeedWind}</p>
+                        <p className="humidity">{weatherData.humidity}</p>
+                        <p className="wind">{weatherData.windSpeed}</p>
+                        <p className='description'>{weatherData.description}</p>
                     </div>
                 </article>
                 <article className='cards'>
@@ -36,8 +37,9 @@ const Cards = () => {
                         <p className="current-temp">{weatherData.currentTeamp}</p>
                         <p className="max-temp">{weatherData.maxTemp}</p>
                         <p className="min-temp">{weatherData.minTemp}</p>
-                        <p className="precip">{weatherData.precipitation}</p>
-                        <p className="wind">{weatherData.windSpeedWind}</p>
+                        <p className="humidity">{weatherData.humidity}</p>
+                        <p className="wind">{weatherData.windSpeed}</p>
+                        <p className='description'>{weatherData.description}</p>
                     </div>
                 </article>
             </div>

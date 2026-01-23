@@ -12,7 +12,7 @@ export const DataProvider = ({ children }) => {
         currentTemp: null,
         maxTemp: null,
         minTemp: null,
-        precipitation: null,
+        humidity: null,
         windSpeed: null,
         description: null
     })
@@ -24,6 +24,14 @@ export const DataProvider = ({ children }) => {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
             const data = await res.json()
             console.log('Data fetched: ', data.days)
+            setWeatherData({
+                currentTemp: data.days[0].temp,
+                maxTemp: data.days[0].tempmax,
+                minTemp: data.days[0].tempmin,
+                humidity: data.days[0].humidity,
+                windSpeed: data.days[0].windspeed,
+                description: data.days[0].description
+            })
         } catch (err) {
             console.error(err.message)
         }
