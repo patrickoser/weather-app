@@ -8,14 +8,11 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // console.log(`searchData: ${searchData.location}, location: ${location}`)
         setSearchData(prev => ({ ...prev,
             location: location,
             startDate: new Date().toISOString().split('T')[0],
             endDate: new Date(Date.now() + (48 * 60 * 60 * 1000)).toISOString().split('T')[0]
         }))
-        // setSearchData(prev => ({ ...prev, location: location }))
-        // console.log(`searchData: ${searchData.location}, location: ${location}`)
     }
 
     return (
