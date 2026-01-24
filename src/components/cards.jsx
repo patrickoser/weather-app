@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 
 const Cards = () => {
