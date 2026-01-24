@@ -4,7 +4,7 @@ import { DataContext } from '../context/DataContext';
 
 const Cards = () => {
 
-    const { searchData, setSearchData, weatherData } = useContext(DataContext)
+    const { weatherData } = useContext(DataContext)
 
     return (
         weatherData?.days[0]?.currentTemp ? (
