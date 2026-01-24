@@ -40,8 +40,12 @@ export const DataProvider = ({ children }) => {
 
     }, [searchData.location])
 
+    // Check for state update after api reponse.
     useEffect(() => {
-        console.log(weatherData)
+        if (weatherData.days[0, 1, 2]) {
+            console.log(weatherData)
+        }
+        
     }, [weatherData.days[0, 1, 2]])
     return (
         <DataContext.Provider value={{ searchData, setSearchData, getData, weatherData }}>

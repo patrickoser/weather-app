@@ -7,8 +7,20 @@ const Cards = () => {
     const { searchData, setSearchData, weatherData } = useContext(DataContext)
 
     return (
-        weatherData?.days[0].currentTemp ? (
-            <div className='cards-container'>
+        weatherData?.days[0]?.currentTemp ? (
+            <div>
+                {weatherData.days.map((day, index) => (
+                    <article className="weather-details" key={index}>
+                        (weatherData.days[day] === 0 ? <p className="current-temp">Current Temp: {weatherData.days[day].currentTemp}</p> : <p className="average-temp">Avg Temp: {weatherData.days[day].currentTemp}</p>)
+                        <p className="max-temp">Max Temp: {weatherData.days[day].maxTemp}</p>
+                        <p className="min-temp">Min Temp: {weatherData.days[day].minTemp}</p>
+                        <p className="humidity">Humidity: {weatherData.days[day].humidity}</p>
+                        <p className="wind">Wind Speed: {weatherData.days[day].windSpeed}</p>
+                        <p className='description'>Decription: {weatherData.days[day].description}</p>
+                    </article>
+                ))}
+            </div>
+            /*<div className='cards-container'>
                 <article className='cards'>
                     <h2>Today</h2>
                     <div className="weather-details">
@@ -42,7 +54,7 @@ const Cards = () => {
                         <p className='description'>{weatherData.days[2].description}</p>
                     </div>
                 </article>
-            </div>
+            </div>*/
         ) : <h2>Input a Location.</h2>
     )
 }
