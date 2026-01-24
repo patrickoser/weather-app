@@ -15,7 +15,6 @@ export const DataProvider = ({ children }) => {
         try {
             const res = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${searchData.location}/${searchData.startDate}/${searchData.endDate}?key=92TP9PDYW45DZ53CUVY4DBWDC`)
             const data = await res.json()
-            console.log('Data fetched: ', data)
 
             const mappedData = data.days?.map((day) => ({
                 currentTemp: day.temp,
@@ -25,7 +24,6 @@ export const DataProvider = ({ children }) => {
                 windSpeed: day.windspeed,
                 description: day.description
             }))
-            console.log(mappedData)
 
             setWeatherData({ days: mappedData })
         } catch (err) {
@@ -40,13 +38,6 @@ export const DataProvider = ({ children }) => {
 
     }, [searchData.location])
 
-    // Check for state update after api reponse.
-    useEffect(() => {
-        if (weatherData.days[0, 1, 2]) {
-            console.log(weatherData)
-        }
-        
-    }, [weatherData.days[0, 1, 2]])
     return (
         <DataContext.Provider value={{ searchData, setSearchData, getData, weatherData }}>
             {children}
